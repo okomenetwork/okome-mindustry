@@ -20,7 +20,7 @@ public class OkomePlugin extends Plugin{
     @Override
     public void registerClientCommands(CommandHandler handler){
         handler.<Player>register("ping", "", "Pong back to player.", (args, player) -> {
-            player.sendMessage("Pong!");
+            player.sendMessage("Pong! x2");
         });
     }
 }
