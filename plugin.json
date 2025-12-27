@@ -1,7 +1,7 @@
 {
   "name": "OkomeNetworkPlugin",
   "author": "dastermaf, awreh",
-  "main": "example.ExamplePlugin",
+  "main": "okomePlugin.OkomePlugin",
   "description": "A plugin for Okome Network server.",
   "version": 1.0
 }
