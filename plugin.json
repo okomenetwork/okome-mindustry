@@ -1,7 +1,7 @@
 {
-  "name": "ExamplePlugin",
-  "author": "Anuke",
+  "name": "OkomeNetworkPlugin",
+  "author": "dastermaf, awreh",
   "main": "example.ExamplePlugin",
-  "description": "A plugin to demonstrate some basic features.",
+  "description": "A plugin for Okome Network server.",
   "version": 1.0
 }
