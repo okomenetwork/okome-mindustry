@@ -7,7 +7,7 @@ import mindustry.mod.*;
 public class OkomePlugin extends Plugin{
     @Override
     public void init(){
-        Log.info("Our example plugin is initealizated!");
+        Log.info("Our example plugin is initializated!");
     }
 
     @Override
@@ -20,7 +20,7 @@ public class OkomePlugin extends Plugin{
     @Override
     public void registerClientCommands(CommandHandler handler){
         handler.<Player>register("ping", "", "Pong back to player.", (args, player) -> {
-            player.sendMessage("Pong!");
+            player.sendMessage("Pong! x3");
         });
     }
 }
