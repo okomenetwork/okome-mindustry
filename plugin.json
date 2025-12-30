@@ -3,5 +3,6 @@
   "author": "dastermaf, awreh",
   "main": "okomePlugin.OkomePlugin",
   "description": "A plugin for Okome Network server.",
-  "version": 1.0
+  "version": "1.0",
+  "minGameVersion": 147
 }
