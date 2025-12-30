@@ -2,6 +2,7 @@ apply plugin: "java"
 
 version '1.0'
 
+// Mindustry v8 requires Java 17+. Older versions are not supported
 sourceCompatibility = 17
 targetCompatibility = 17
 
@@ -12,7 +13,8 @@ repositories {
 }
 
 ext {
-    mindustryVersion = 'v146'
+    // Fixed version to avoid daily breaking changes
+    mindustryVersion = 'v154.3'
 }
 
 dependencies {
@@ -21,9 +23,9 @@ dependencies {
 }
 
 jar {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-
     archiveFileName = "${project.archivesBaseName}.jar"
+    // Required for newer Gradle versions to prevent build errors
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
