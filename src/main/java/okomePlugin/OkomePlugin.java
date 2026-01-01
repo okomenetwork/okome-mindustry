@@ -7,7 +7,7 @@ import mindustry.mod.*;
 public class OkomePlugin extends Plugin{
     @Override
     public void init(){
-        Log.info("Our example plugin is initializated!");
+        Log.info("Our example plugin is initialized!");
     }
 
     @Override
