@@ -1,26 +1,25 @@
 package okomePlugin;
 
 import arc.util.*;
-import mindustry.gen.*;
 import mindustry.mod.*;
+import mindustry.gen.*;
+import okomePlugin.commands.*;
 
-public class OkomePlugin extends Plugin{
+public class OkomePlugin extends Plugin {
+
     @Override
-    public void init(){
-        Log.info("Our example plugin is initialized!");
+    public void init() {
+        Log.info("=== Welcome to Okome Plugin ===");
     }
 
     @Override
-    public void registerServerCommands(CommandHandler handler){
-        handler.register("ping", "Pong back to console.", args -> {
-            Log.info("Pong!");
-        });
+    public void registerClientCommands(CommandHandler handler) {
+        PlayerCommands.register(handler);
     }
 
     @Override
-    public void registerClientCommands(CommandHandler handler){
-        handler.<Player>register("ping", "", "Pong back to player.", (args, player) -> {
-            player.sendMessage("Pong! x3");
-        });
+    public void registerServerCommands(CommandHandler handler) {
+        ServerCommands.register(handler);
+        AdminCommands.register(handler);
     }
 }
