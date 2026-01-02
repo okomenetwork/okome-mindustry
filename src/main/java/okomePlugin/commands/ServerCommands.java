@@ -16,13 +16,13 @@ public class ServerCommands {
             String url = System.getenv("RULES_URL");
 
             if (url == null || url.isEmpty()) {
-                Log.err("[ServerCommands] ERROR: RULES_URL env missing");
+                Log.err("[reloadrules] ERROR: RULES_URL env missing");
                 return;
             }
 
             Http.get(url.trim(), response -> {
                 if (response.getStatus() != Http.HttpStatus.OK) {
-                    Log.err("[ServerCommands] ERROR: HTTP Error: " + response.getStatus());
+                    Log.err("[reloadrules] ERROR: HTTP Error: " + response.getStatus());
                     return;
                 }
 
@@ -34,12 +34,12 @@ public class ServerCommands {
                 String saved = Core.settings.getString("server_rules", "");
 
                 if (saved.equals(text)) {
-                    Log.info("[ServerCommands] SUCCESS: Rules saved successfully. Length: " + text.length());
+                    Log.info("[reloadrules] SUCCESS: Rules saved successfully. Length: " + text.length());
                 } else {
-                    Log.err("[ServerCommands] ERROR: Save verification failed!");
+                    Log.err("[reloadrules] ERROR: Save verification failed!");
                 }
             }, err -> {
-                Log.err("[ServerCommands] ERROR: Download failed", err);
+                Log.err("[reloadrules] ERROR: Download failed", err);
             });
         });
     }
